@@ -1,34 +1,37 @@
 import React from "react";
-
+import './features.css'
 const Features =()=>{
     const features =[
         {
             title: "Catacteristica 1",
             description: "First fucionality description",
-            image: "image route"
+            image: "/a.jpg"
         },
         {
             title: "Catacteristica 1",
             description: "First fucionality description",
-            image: "image route"
+            image: "/b.jpg"
         },
         {
             title: "Catacteristica 1",
             description: "First fucionality description",
-            image: "image route"
+            image: "/c.jpg"
         }
     ]
     return(
-        <div>
-            {features.map((features, index)=>{
-                <div key={index}>
-                    <img src={features.image} alt={features.title}/>
-                    <h3>{features.title}</h3>
-                    <p>{features.description}</p>
+        <div className="features-container">
+            {features.map((features, index)=>(
+                <div key={index} className="feature-item">
+                    <img src={features.image} alt={features.title} className="feature-image"/>
+                    <div className="feature-text">
+                        <h3>{features.title}</h3>
+                        <p>{features.description}</p>
+                    </div>
                 </div>
-            })
-
+            ))
             }
         </div>
     )
 }
+
+export default Features
